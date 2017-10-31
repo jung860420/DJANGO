@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,6 +8,16 @@
 <body>
 	
 <h1>Templates</h1>
+
+<div id="posts">
+  {% for post in posts %}
+	<div class="item">
+		<div>{{ post.published_date }}</div>
+		<div>{{ post.title }}</div>
+		<div>{{ post.text|linebreaksbr }}</div>
+	</div>
+  {% endfor %}
+</div>
 
 </body>
 </html>

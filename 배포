@@ -1,0 +1,35 @@
+
+1. PythonAnywhere에서 가상환경(virtualenv) 생성하기 ------------------------------------
+
+	1) virtualenv --python=python3.6 myvenv
+
+	2) source myvenv/bin/activate
+
+	3) pip install django~=1.11.0
+
+
+2. PythonAnywhere에서 데이터베이스 생성하기 --------------------------------------------
+
+	1) python manage.py migrate
+
+
+3. web app으로 블로그 배포하기 -------------------------------------------------------
+
+	1) PythonAnywhere 대시보드로 와서 Web을 클릭하고 Add a new web app를 선택하세요
+
+	2) 가상환경(virtualenv) 설정하기 - /home/JUNGJINHWAN/myvenv
+
+	3) WSGI 파일 설정하기
+
+		import os
+		import sys
+	
+		path = '/home/JUNGJINHWAN/DJANGO'  # PythonAnywhere 계정으로 바꾸세요.
+		if path not in sys.path:
+		    sys.path.append(path)
+	
+		os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+	
+		from django.core.wsgi import get_wsgi_application
+		from django.contrib.staticfiles.handlers import StaticFilesHandler
+		application = StaticFilesHandler(get_wsgi_application())

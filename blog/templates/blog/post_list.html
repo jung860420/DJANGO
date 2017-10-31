@@ -2,22 +2,26 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+<meta charset="UTF-8">
+<title>Document</title>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
 </head>
 <body>
 	
-<h1>Templates</h1>
+<div>
+	<h1><a href="#">Templates</a></h1>
+</div>	
 
-<div id="posts">
-  {% for post in posts %}
-	<div class="item">
-		<div>{{ post.published_date }}</div>
-		<div>{{ post.title }}</div>
-		<div>{{ post.text|linebreaksbr }}</div>
-	</div>
-  {% endfor %}
+{% for post in posts %}
+<div>
+	<p>{{ post.published_date }}</p>
+	<h2><a href="#">{{ post.title }}</a></h2>
+	<p>{{ post.text|linebreaksbr }}</p>
 </div>
+{% endfor %}
 
 </body>
 </html>

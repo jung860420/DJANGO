@@ -12,12 +12,14 @@
 
 	1) python manage.py migrate
 
+	2) python manage.py createsuperuser
+
 
 3. web app으로 블로그 배포하기 -------------------------------------------------------
 
 	1) PythonAnywhere 대시보드로 와서 Web을 클릭하고 Add a new web app를 선택하세요
 
-	2) 가상환경(virtualenv) 설정하기 - /home/JUNGJINHWAN/myvenv
+	2) 가상환경(virtualenv) 설정하기 - /home/JUNGJINHWAN/DJANGO/myvenv
 
 	3) WSGI 파일 설정하기
 
